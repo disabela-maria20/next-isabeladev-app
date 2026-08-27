@@ -43,7 +43,6 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Botão para abrir o menu */}
       {!isMenuOpen && (
         <button
           type="button"
@@ -55,8 +54,8 @@ export default function Sidebar() {
         </button>
       )}
 
-      {/* Fundo escuro */}
       <div
+        data-testid="menu-overlay"
         onClick={closeMenu}
         className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-500 lg:hidden ${
           isMenuOpen
@@ -65,14 +64,13 @@ export default function Sidebar() {
         }`}
       />
 
-      {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-screen w-full max-w-sm p-3 text-white transition-transform duration-500 ease-in-out lg:relative lg:max-w-none lg:translate-x-0 lg:p-0 ${
+        data-testid="sidebar"
+        className={`fixed top-0 left-0 z-50 h-screen w-[85vw] max-w-sm p-3 text-white transition-transform duration-500 ease-in-out lg:relative lg:w-full lg:max-w-none lg:translate-x-0 lg:p-0 ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="relative flex h-full flex-col overflow-y-auto rounded-2xl bg-mauve-950 px-6 py-8 sm:px-11 sm:py-12 lg:min-h-0 lg:rounded-none lg:px-11 lg:py-14">
-          {/* Botão fechar */}
           <button
             type="button"
             onClick={closeMenu}
@@ -84,9 +82,9 @@ export default function Sidebar() {
 
           <header>
             <Link
-              className="group inline-block font-serif text-3xl leading-9 font-extrabold tracking-tight"
               href="/"
               onClick={closeMenu}
+              className="group inline-block font-serif text-3xl leading-9 font-extrabold tracking-tight"
             >
               <span className="transition-opacity duration-300 group-hover:opacity-70">
                 Isabela M.
@@ -104,8 +102,8 @@ export default function Sidebar() {
                 return (
                   <li key={item.href}>
                     <Link
-                      onClick={closeMenu}
                       href={item.href}
+                      onClick={closeMenu}
                       className={`group flex items-center gap-3 text-base font-medium transition-all duration-300 ${
                         isActive
                           ? 'translate-x-2 text-white'
