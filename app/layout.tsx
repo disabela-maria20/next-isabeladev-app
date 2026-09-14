@@ -1,9 +1,13 @@
 import './globals.css';
 
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans, IBM_Plex_Serif } from 'next/font/google';
 
 import { Sidebar } from '@/shared/components/layout';
+
+const GTM_ID = 'GTM-MHW6F6GN';
+const GA_MEASUREMENT_ID = 'G-RRHGHE8313';
 
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ['latin'],
@@ -20,6 +24,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   description: 'Portfólio de Isabela, Front-end Developer.',
   title: 'Isabela | Front-end Developer',
+  verification: {
+    google: 'qP1L-UbCctnjg6IZnNsVLmJyezYj3hrsBnuQZD6aREE',
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
@@ -28,6 +35,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${ibmPlexSerif.variable} ${ibmPlexSans.variable}`}
       lang="pt-BR"
     >
+      <GoogleTagManager gtmId={GTM_ID} />
+
       <body>
         <div className="grid min-h-screen lg:grid-cols-[256px_1fr]">
           <Sidebar />
@@ -35,6 +44,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
           <main>{children}</main>
         </div>
       </body>
+
+      <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>
   );
 }
