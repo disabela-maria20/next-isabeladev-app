@@ -8,23 +8,23 @@ import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 const navigation = [
   {
     href: '/',
-    label: 'Home',
+    label: 'Início',
   },
   {
-    href: '/about',
-    label: 'About',
+    href: '/sobre',
+    label: 'Sobre mim',
   },
   {
-    href: '/works',
-    label: 'Works',
+    href: '/projetos',
+    label: 'Projetos',
   },
   {
-    href: '/process',
-    label: 'Process',
+    href: '/experiencia',
+    label: 'Experiência',
   },
   {
-    href: '/contact',
-    label: 'Contact',
+    href: '/contato',
+    label: 'Contato',
   },
 ];
 

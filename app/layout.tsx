@@ -37,11 +37,20 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     >
       <GoogleTagManager gtmId={GTM_ID} />
 
-      <body>
+      <body className="overflow-hidden">
         <div className="grid min-h-screen lg:grid-cols-[256px_1fr]">
           <Sidebar />
+          {/* Background decoration */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-purple-500/10 blur-3xl"
+          />
 
-          <main>{children}</main>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-pink-500/10 blur-3xl"
+          />
+          <main className="relative m-auto h-full w-full">{children}</main>
         </div>
       </body>
 
