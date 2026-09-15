@@ -1,1 +1,1 @@
-export { default as TrackedLink } from './trackedLink';
+export { default as Button } from './Button';

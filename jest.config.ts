@@ -8,7 +8,7 @@ const customJestConfig = {
   collectCoverageFrom: ['shared/**/*.{ts,tsx}', '!shared/**/*.d.ts'],
 
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/shared/$1',
+    '^@/(.*)$': '<rootDir>/$1',
   },
 
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],

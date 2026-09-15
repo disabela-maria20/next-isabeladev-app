@@ -1,15 +1,19 @@
-/* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
+{
+  /* eslint-disable @next/next/no-img-element */
+}
+
 import Link from 'next/link';
+
+import { Button } from '@/shared/components';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
-      <div className="mx-auto grid min-h-[80vh] max-w-7xl items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
-        {/* CONTENT */}
-        <div className="relative">
-          <div aria-hidden="true" className="" />
-
+    <section className="mx-auto grid min-h-screen max-w-7xl content-center items-center gap-14 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:px-16">
+      <div className="relative">
+        <div
+          aria-hidden="true"
+          className="relative before:absolute before:-top-10 before:-left-10 before:z-0 before:h-40 before:w-40 before:bg-[url('/img/vector.png')] before:bg-contain before:bg-center before:bg-no-repeat before:content-['']"
+        >
           <h1 className="relative z-10 max-w-5xl font-sans text-[4.5rem] leading-[0.82] font-light tracking-[-0.06em] text-black uppercase sm:text-[6.5rem] md:text-7xl">
             <span className="block">Meu nome é</span>
 
@@ -20,7 +24,6 @@ export default function Hero() {
             <span className="block font-extrabold">Ribeiro...</span>
           </h1>
 
-          {/* Apresentação */}
           <div className="relative z-10 mt-8 max-w-md sm:mt-10">
             <p className="font-sans text-sm font-medium text-black italic sm:text-base">
               Front-end Developer de{' '}
@@ -30,14 +33,10 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Ações */}
           <div className="relative z-10 mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href="/trabalhos"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-transform duration-300 hover:-translate-y-1"
-            >
-              Ver projetos
-            </Link>
+            <Button>
+              <span>Entre em contato</span>
+            </Button>
 
             <Link
               href="/sobre"
@@ -55,29 +54,28 @@ export default function Hero() {
             <span>Tailwind CSS</span>
           </div>
         </div>
+      </div>
 
-        {/* IMAGE */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
-          {/* Elementos decorativos */}
-          <div
-            aria-hidden="true"
-            className="absolute -top-8 -right-8 h-32 w-32 rounded-full bg-orange-400/70 blur-3xl"
+      {/* IMAGE */}
+      <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
+        {/* Elementos decorativos */}
+        <div
+          aria-hidden="true"
+          className="absolute -top-8 -right-8 h-32 w-32 rounded-full bg-orange-400/70 blur-3xl"
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-purple-500/60 blur-3xl"
+        />
+
+        {/* Imagem */}
+        <div className="relative overflow-hidden rounded-[2.5rem]">
+          <img
+            src="/img/hero.png"
+            alt="Isabela Ribeiro"
+            className="block w-full"
           />
-
-          <div
-            aria-hidden="true"
-            className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-purple-500/60 blur-3xl"
-          />
-
-          {/* Imagem */}
-          <div className="relative overflow-hidden rounded-[2.5rem]">
-            <img
-              src="/img/hero.png"
-              alt="Isabela Ribeiro"
-              className="object-cover"
-              sizes="(max-width: 1024px) 80vw, 40vw"
-            />
-          </div>
         </div>
       </div>
     </section>

@@ -1,3 +1,11 @@
+import { Education, Experience, Intro } from '@/features/about';
+
 export default function pageAbout() {
-  return <div>Sobre</div>;
+  return (
+    <div>
+      <Intro />
+      <Experience />
+      <Education />
+    </div>
+  );
 }

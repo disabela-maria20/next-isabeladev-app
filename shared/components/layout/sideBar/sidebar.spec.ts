@@ -34,31 +34,31 @@ test.describe('Sidebar', () => {
 
     await expect(
       page.getByRole('link', {
-        name: /home/i,
+        name: /início/i,
       }),
     ).toBeVisible();
 
     await expect(
       page.getByRole('link', {
-        name: /about/i,
+        name: /sobre mim/i,
       }),
     ).toBeVisible();
 
     await expect(
       page.getByRole('link', {
-        name: /works/i,
+        name: /projetos/i,
       }),
     ).toBeVisible();
 
     await expect(
       page.getByRole('link', {
-        name: /process/i,
+        name: /experiência/i,
       }),
     ).toBeVisible();
 
     await expect(
       page.getByRole('link', {
-        name: /contact/i,
+        name: /contato/i,
       }),
     ).toBeVisible();
   });
@@ -88,7 +88,7 @@ test.describe('Sidebar', () => {
     await expect(sidebar).toHaveClass(/-translate-x-full/);
   });
 
-  test('deve navegar para a página About', async ({ page }) => {
+  test('deve navegar para a página Sobre', async ({ page }) => {
     await page.goto('/');
 
     await page
@@ -99,10 +99,10 @@ test.describe('Sidebar', () => {
 
     await page
       .getByRole('link', {
-        name: /about/i,
+        name: /sobre mim/i,
       })
       .click();
 
-    await expect(page).toHaveURL(/\/about/);
+    await expect(page).toHaveURL(/\/sobre/);
   });
 });

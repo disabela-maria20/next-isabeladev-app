@@ -113,7 +113,7 @@ describe('Sidebar', () => {
 
     await user.click(
       screen.getByRole('link', {
-        name: /about/i,
+        name: /sobre mim/i,
       }),
     );
 
@@ -123,25 +123,29 @@ describe('Sidebar', () => {
   it('deve renderizar todos os links de navegação', () => {
     render(<Sidebar />);
 
-    expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /início/i })).toBeInTheDocument();
 
-    expect(screen.getByRole('link', { name: /about/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: /sobre mim/i }),
+    ).toBeInTheDocument();
 
-    expect(screen.getByRole('link', { name: /works/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /projetos/i })).toBeInTheDocument();
 
-    expect(screen.getByRole('link', { name: /process/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: /experiência/i }),
+    ).toBeInTheDocument();
 
-    expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /contato/i })).toBeInTheDocument();
   });
 
   it('deve marcar a página atual como ativa', () => {
-    mockUsePathname.mockReturnValue('/works');
+    mockUsePathname.mockReturnValue('/projetos');
 
     render(<Sidebar />);
 
     expect(
       screen.getByRole('link', {
-        name: /works/i,
+        name: /projetos/i,
       }),
     ).toHaveClass('translate-x-2');
   });
